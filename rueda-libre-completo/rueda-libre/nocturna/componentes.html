@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kit de componentes v0.1 de Rueda Nocturna: botones, card, alertas y campos.">
+  <title>Kit de componentes | Rueda Nocturna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-crema font-texto text-azul-noche dark:scheme-dark dark:bg-azul-noche dark:text-crema">
+  <header class="border-b border-gris-asfalto/30 bg-white dark:border-white/20 dark:bg-azul-noche">
+    <div class="mx-auto max-w-6xl px-4 flex items-center justify-between gap-4 py-4">
+      <p class="font-titulos text-xl font-bold">Rueda Libre</p>
+      <a href="index.html" class="rounded-lg p-2 font-semibold text-gris-asfalto hover:text-azul-noche focus:outline-none focus:ring-4 focus:ring-azul-noche dark:focus:ring-amarillo-farol dark:text-crema dark:hover:text-amarillo-farol">Ir a la landing</a>
+    </div>
+  </header>
+  <main>
+    <section class="py-8 md:py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h1 class="mb-4 font-titulos text-3xl font-bold md:text-4xl">Kit de componentes Rueda Nocturna v0.1</h1>
+        <p>Todos los componentes de la landing, reunidos en una sola página.</p>
+      </div>
+    </section>
+    <section class="py-8 md:py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-4 font-titulos text-2xl font-bold md:text-3xl">Botones</h2>
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="btn-primario">Principal</a>
+          <a href="#" class="btn-secundario">Secundario</a>
+          <a href="#" class="btn-contorno">Contorno</a>
+        </div>
+      </div>
+    </section>
+    <section class="py-8 md:py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-4 font-titulos text-2xl font-bold md:text-3xl">Card</h2>
+        <div class="max-w-sm">
+          <article class="relative flex flex-col rounded-lg border border-gris-asfalto bg-white p-4 shadow-md hover:border-verde-ruta hover:shadow-xl dark:border-white/30 dark:bg-white/10 dark:hover:border-amarillo-farol">
+            <img src="../img/ruta.svg" alt="Ilustración del trazado de la ruta Luces del Centro" class="mb-4 h-40 w-full rounded-lg object-cover">
+            <p class="self-start rounded-lg px-2 py-1 text-sm font-semibold bg-verde-ruta text-white">Nivel: Fácil</p>
+            <h3 class="mt-4 font-titulos text-xl font-bold">Luces del Centro</h3>
+            <ul class="mt-4 flex flex-col gap-2">
+              <li class="flex justify-between gap-4"><span class="text-sm text-gris-asfalto dark:text-crema/80">Distancia</span><span class="font-semibold">10 km</span></li>
+              <li class="flex justify-between gap-4"><span class="text-sm text-gris-asfalto dark:text-crema/80">Duración</span><span class="font-semibold">2 h</span></li>
+              <li class="flex justify-between gap-4"><span class="text-sm text-gris-asfalto dark:text-crema/80">Punto de encuentro</span><span class="font-semibold">Sede de Rueda Libre</span></li>
+            </ul>
+            <div class="mt-auto flex items-center justify-between gap-4 pt-6">
+              <p class="font-titulos text-2xl font-bold">$55.000</p>
+              <a href="#inscripcion" class="btn-primario">Inscríbete</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="py-8 md:py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-4 font-titulos text-2xl font-bold md:text-3xl">Alertas</h2>
+        <div class="flex flex-col gap-4">
+          <div class="rounded-lg border-l-4 border-azul-noche bg-azul-noche/10 p-4 dark:border-crema">
+            <p class="font-semibold">Información</p>
+            <p>Las salidas son de jueves a sábado.</p>
+          </div>
+          <div role="status" class="rounded-lg border-l-4 border-verde-ruta bg-verde-ruta/10 p-4">
+            <p class="font-semibold">Éxito</p>
+            <p>Tu inscripción quedó registrada.</p>
+          </div>
+          <div class="rounded-lg border-l-4 border-naranja-pedal bg-naranja-pedal/20 p-4">
+            <p class="font-semibold">Advertencia</p>
+            <p>Los cupos de cada ruta son limitados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-8 md:py-12">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="mb-4 font-titulos text-2xl font-bold md:text-3xl">Campos de formulario</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div>
+            <label for="correo" class="mb-2 block font-semibold">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required autocomplete="email" aria-describedby="ayuda-correo" class="w-full rounded-lg border border-gris-asfalto bg-white p-2 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-4 focus:ring-azul-noche dark:focus:ring-amarillo-farol dark:border-white/50 dark:bg-white/10 dark:text-crema dark:placeholder:text-crema/70">
+            <p id="ayuda-correo" class="mt-2 text-sm text-gris-asfalto dark:text-crema/80">Te enviamos la confirmación aquí.</p>
+          </div>
+          <div>
+            <label for="celular" class="mb-2 block font-semibold">Celular</label>
+            <input type="tel" id="celular" name="celular" placeholder="3001234567" required pattern="3[0-9]{9}" title="10 dígitos, debe empezar por 3. Ejemplo: 3001234567" autocomplete="tel" aria-describedby="ayuda-celular" class="w-full rounded-lg border border-gris-asfalto bg-white p-2 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-4 focus:ring-azul-noche dark:focus:ring-amarillo-farol dark:border-white/50 dark:bg-white/10 dark:text-crema dark:placeholder:text-crema/70">
+            <p id="ayuda-celular" class="mt-2 text-sm text-gris-asfalto dark:text-crema/80">10 dígitos, empieza por 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-azul-noche text-white dark:border-t dark:border-white/20">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col gap-6 py-8 md:flex-row md:justify-between">
+      <div>
+        <p class="font-titulos text-xl font-bold">Rueda Libre</p>
+        <p class="mt-2">Alquiler de bicicletas en Medellín</p>
+        <p class="mt-2 text-sm">© 2026 Rueda Libre</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <p class="font-titulos font-bold">Enlaces</p>
+        <ul class="mt-2 flex flex-col gap-2">
+          <li><a href="index.html#rutas" class="underline hover:text-amarillo-farol">Rutas</a></li>
+          <li><a href="index.html#planes" class="underline hover:text-amarillo-farol">Planes</a></li>
+          <li><a href="../index.html" class="underline hover:text-amarillo-farol">Volver al sitio principal</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="font-titulos font-bold">Contacto</p>
+        <ul class="mt-2 flex flex-col gap-2">
+          <li><a href="mailto:hola@ruedalibre.example" class="underline hover:text-amarillo-farol">hola@ruedalibre.example</a></li>
+          <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="underline hover:text-amarillo-farol">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

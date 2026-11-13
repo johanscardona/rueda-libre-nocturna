@@ -1,0 +1,86 @@
+BITÁCORA · RUEDA NOCTURNA (Tailwind)
+(Los espacios con ____ los debes llenar tú con tus propios datos reales.)
+
+MINIRETO 1 · BOTÓN CON BOOTSTRAP VS TAILWIND
+- Semana 2 (Bootstrap): el botón se hacía con clases de componente: class="btn btn-success". Una sola clase ya traía color, relleno y bordes redondeados.
+- Hoy (Tailwind): el botón se hace sumando utilidades: class="inline-block rounded-lg bg-green-700 px-6 py-3 font-semibold text-white hover:bg-green-800". Cada clase hace UNA sola cosa.
+- Diferencia clave: un framework de componentes (Bootstrap) te da piezas ya diseñadas; uno utility-first (Tailwind) te da piezas pequeñas para diseñar tú mismo.
+
+MINIRETO 2 · CLASES EN output.css
+- Clase que SÍ uso (bg-verde-ruta): aparece en src/output.css.
+- Clase que NO uso (bg-pink-500): NO aparece en src/output.css.
+- Por qué: la CLI lee mis archivos HTML y genera solo el CSS de las clases que encuentra escritas. Si no la escribo, no se genera. Por eso el archivo queda pequeño.
+- Prueba de teclado: con Tab, los tres botones muestran un anillo (focus:ring-4).
+
+MINIRETO 3 · CARDS
+- Las tres cards comparten las mismas clases. Solo cambian los datos y el color de la etiqueta de nivel (el texto también dice "Nivel: Fácil / Medio / Difícil").
+- El efecto hover cambia sombra y borde, no mueve nada.
+
+MINIRETO 4 · REGLAS DEL KIT
+1. Bordes: rounded-lg en botones, cards, alertas, campos y fieldsets (rounded-full solo en los círculos de los pasos).
+2. Espaciado: solo la escala 2, 4, 6 y 8 (p-2 en campos, p-4 en cards y alertas, p-6 en planes, gap-4 y gap-6 entre piezas).
+3. Colores: solo los de la marca (verde-ruta, naranja-pedal, azul-noche, crema, gris-asfalto, amarillo-farol) y blanco.
+4. Foco: todo lo que se puede usar con teclado lleva focus:ring-4.
+5. Alertas con role="status" solo la de éxito. Campos con label for + texto de ayuda.
+- URL de GitHub Pages de componentes.html: ____________________
+
+MINIRETO 5 · FLEX VS GRID
+- Encabezado, pie y lista de beneficios: flex, porque es una sola fila o columna.
+- Rutas, pasos y planes: grid, porque son cajas iguales en filas y columnas (grid-cols-*).
+- Pasos de "¿Cómo funciona?": grid con 4 columnas iguales, porque necesito que todos midan lo mismo.
+
+MINIRETO 6 · RESPONSIVE
+- Lo que se rompía a 360 px antes de arreglarlo: ____________________
+- Tabla de pruebas (medida con una prueba automática; confírmala tú en DevTools):
+ancho   | rutas | pasos | planes | enlaces del encabezado | encabezado | scroll horizontal
+360 px  |   1   |   1   |   1   | ocultos                | apilado    | no
+768 px  |   2   |   2   |   1   | visibles               | en fila    | no
+1024 px |   3   |   4   |   3   | visibles               | en fila    | no
+1280 px |   3   |   4   |   3   | visibles               | en fila    | no
+
+MINIRETO 7 · TEMA Y MODO OSCURO
+- @theme define 6 colores y 2 fuentes: de ahí salen bg-verde-ruta, text-azul-noche, font-titulos, font-texto...
+- Contraste (fórmula WCAG; confírmalo en WebAIM):
+  Crema sobre Azul Noche               14.83:1  APTA
+  Blanco sobre Azul Noche              15.97:1  APTA
+  Amarillo Farol sobre Azul Noche      11.08:1  APTA
+  Verde Ruta sobre Azul Noche           3.01:1  NO APTA -> no lo uso como texto en modo oscuro
+  Crema sobre card oscura              11.02:1  APTA
+  Azul Noche sobre Amarillo Farol      11.08:1  APTA (botón principal oscuro)
+  Blanco sobre Verde Ruta               5.31:1  APTA (botón principal claro)
+  Verde Ruta sobre Crema                4.93:1  APTA (botón contorno claro)
+  Gris Asfalto sobre Blanco             6.00:1  APTA
+- Corrección: en modo oscuro cambié el verde por Amarillo Farol en botones y textos de acento.
+
+MINIRETO 8 · CÓDIGO LEGIBLE Y VEREDICTO
+- Lista de clases más repetida: el botón principal (aparece 8 veces en index.html).
+- Se crearon solo 3 clases con @apply: btn-primario, btn-secundario, btn-contorno.
+- Orden de clases: layout, espaciado, tamaño, tipografía, color y estados.
+- Tamaño del CSS de Tailwind minificado (src/output.css): 20.654 bytes (unos 20 KB; unos 4 KB comprimido con gzip).
+- Tamaño del CSS de Bootstrap en el sitio v2.0 (DevTools > Network): ______ KB
+- Tamaño del JavaScript de Bootstrap en el sitio v2.0: ______ KB
+- Comparativa (completa con tu experiencia):
+  Curva de aprendizaje: ____________________
+  Personalización: con @theme cambié colores y fuentes en un solo sitio.
+  Tamaño final: ____________________
+  Casos de uso: ____________________
+- Recomendación para Rueda Libre: ____________________
+
+MINIRETO 9 · FORMULARIO (CONTRARRELOJ 1)
+- Tiempo real: ____ min. Pendiente: ____________________
+- Pruebas: vacío (no envía), datos inválidos (no envía), completo (sí envía), solo con teclado (sí).
+
+MINIRETO 10 · UN SOLO ECOSISTEMA (CONTRARRELOJ 2)
+- Tiempo real: ____ min.
+- Se agregó "Rueda Nocturna" al menú de las tres páginas del sitio y un aviso en el inicio.
+- Nota: mi sitio está hecho con HTML y CSS propio (no trae Bootstrap), así que no hay carrusel; usé una tarjeta de aviso con el botón "Conoce Rueda Nocturna".
+- Rutas: desde index.html -> nocturna/index.html | desde paginas/ -> ../nocturna/index.html | desde nocturna/ -> ../index.html y ../paginas/reservas.html
+- Marca igual en los dos: mismos 5 colores, mismas fuentes (Montserrat y Open Sans) y mismo correo.
+
+MINIRETO 11 · PLANES (CONTRARRELOJ 3)
+- Tiempo real: ____ min. Pendiente: ____________________
+- Medidas en DevTools (Computed): las tres cards miden 357 px de ancho, 24 px de relleno y 4 px de borde a 1280 px.
+
+MINIRETO 12 · ENTREGA
+- Validador W3C (landing y reservas): ____________________
+- Retroalimentación de la demo: ____________________

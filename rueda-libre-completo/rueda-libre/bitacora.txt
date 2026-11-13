@@ -1,0 +1,95 @@
+BITÁCORA · RUEDA LIBRE
+
+MINIRETO 1 · PETICIÓN AL SERVIDOR (completa con tus datos reales de DevTools > Network)
+- URL completa: http://127.0.0.1:5500/index.html   (confirma en tu navegador)
+- Protocolo: http
+- Host: 127.0.0.1
+- Puerto: 5500 (el que muestre Live Server)
+- Ruta: /index.html
+- Método: GET
+- Código de estado: 200 OK  <- verifícalo tú
+- Ruta inexistente (/promociones.html): 404 Not Found = el servidor está vivo, pero ese recurso no existe.
+
+ROLES
+- HTML: estructura y contenido. Ej.: la tabla de tarifas de alquiler.
+- CSS: apariencia. Ej.: el verde de marca en los botones "Reservar ahora".
+- JavaScript: comportamiento. Ej.: (futuro) calcular el precio total al elegir bicicleta y plan.
+
+MINIRETO 4 · TABLA DE RUTAS RELATIVAS
+origen                  | destino                 | ruta escrita
+index.html              | paginas/tarifas.html    | paginas/tarifas.html
+index.html              | paginas/reservas.html   | paginas/reservas.html
+index.html              | tabla de recorridos     | paginas/tarifas.html#recorridos
+index.html              | css / imágenes          | css/styles.css , img/portada.svg
+paginas/tarifas.html    | index.html              | ../index.html
+paginas/tarifas.html    | paginas/reservas.html   | reservas.html
+paginas/tarifas.html    | css / logo              | ../css/styles.css , ../img/logo.svg
+paginas/reservas.html   | index.html              | ../index.html
+paginas/reservas.html   | paginas/tarifas.html    | tarifas.html
+
+MINIRETO 5 · ESQUEMA DE REGIONES (igual en las 3 páginas)
+header (marca + nav#menu) > main > [section(s) / article(s) / aside] > footer
+- Inicio: section portada, quiénes somos, servicios (3 article), cómo alquilar, encuéntranos.
+- Tarifas: section alquiler, section recorridos, aside "Qué llevar".
+- Reservas: section formulario, aside horario.
+- div/span: ningún <div> ni <span> semántico. Se usan <div class="tabla-scroll"> (permite scroll horizontal en móvil; no existe etiqueta equivalente) y <span class="etiqueta"> (texto "Nuevo" en línea sin significado propio).
+
+MINIRETO 6 · JUSTIFICACIÓN DE CONTROLES
+1. Tipo de bicicleta = radio: son 3 opciones excluyentes y se ven todas a la vez.
+2. Plan = select: 3 opciones, ahorra espacio y evita valores inventados.
+3. Políticas = checkbox: es un sí/no de aceptación.
+
+MINIRETO 7 · TABLA DE PRUEBAS (llena "obtenido" al probar en tu navegador)
+campo     | dato de prueba | esperado          | obtenido
+nombre    | "Al"           | rechaza (<3)      |
+documento | 12ab56         | rechaza           |
+documento | 12345 (5 díg.) | rechaza           |
+documento | 1234567        | acepta            |
+celular   | 3001234567     | acepta            |
+celular   | 1234567890     | rechaza           |
+celular   | 300123         | rechaza           |
+correo    | juan@          | rechaza           |
+fecha     | 2026-10-31     | rechaza           |
+fecha     | 2026-11-15     | acepta            |
+cantidad  | 7              | rechaza           |
+políticas | sin marcar     | rechaza           |
+
+MINIRETO 8 · AUDITORÍA DE ACCESIBILIDAD (verifica cada hallazgo en tu versión)
+1. Imágenes de contenido con alt descriptivo; el logo del encabezado es decorativo: alt="".
+2. Un solo h1 por página, sin saltar niveles (h1>h2>h3).
+3. Enlaces con texto comprensible fuera de contexto ("Ver ubicación en el mapa", no "clic aquí").
+4. <html lang="es"> en las tres páginas.
+5. Todo el sitio se recorre con Tab, y el foco siempre es visible.
+6. Enlaces target="_blank" con rel="noopener".
+
+CONTRASTE WCAG (calculado con la fórmula oficial; confírmalo en WebAIM)
+  Blanco sobre Verde Ruta            5.31:1  APTA texto normal
+  Blanco sobre Naranja Pedal         2.22:1  NO APTA
+  Azul Noche sobre Naranja Pedal     7.20:1  APTA texto normal
+  Azul Noche sobre Crema            14.83:1  APTA texto normal
+  Gris Asfalto sobre Crema           5.57:1  APTA texto normal
+  Verde Ruta sobre Crema             4.93:1  APTA texto normal
+  Naranja Pedal sobre Crema          2.06:1  NO APTA
+  Blanco sobre Azul Noche           15.97:1  APTA texto normal
+MAPA DE USO DE COLOR
+- Texto: Azul Noche (principal), Gris Asfalto (secundario, sobre Crema/blanco).
+- Fondos: Crema (general), Blanco (tarjetas), Azul Noche (portada, pie, encabezados de tabla).
+- Botones: fondo Verde Ruta con texto blanco; hover Azul Noche.
+- Enlaces: Verde Ruta sobre Crema o blanco.
+- Naranja Pedal: solo fondos de destacados con texto Azul Noche; NUNCA texto sobre crema ni texto blanco encima.
+
+MINIRETO 9 · HERENCIA
+- Se hereda: color (el <p> toma el color del body).
+- No se hereda: margin / border (el <p> usa su propio margen). Verifícalo en Computed.
+
+MINIRETO 10 · CONFLICTO DE ESPECIFICIDAD
+- #menu a  = (1,0,1)
+- .activo  = (0,1,0)  -> pierde.  Causa: el id pesa más que una clase.
+- Solución: #menu a.activo = (1,1,1), sin !important.
+
+MINIRETO 11 · MEDICIÓN DE CAJA (completa en DevTools > Computed)
+- Ancho total de una tarjeta con content-box: ____ px
+- Con border-box: ____ px
+
+URL PUBLICADA (GitHub Pages): ____________________
+CIERRE DE LA SEMANA: resumen por MiniReto y qué mejorarías: ____________________

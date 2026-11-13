@@ -1,0 +1,118 @@
+/*  1. VARIABLES */
+:root {
+  --verde-ruta: #1E7A4F;
+  --naranja-pedal: #F39A2B;
+  --azul-noche: #14213D;
+  --crema: #FAF6EF;
+  --gris-asfalto: #5B6470;
+  --blanco: #FFFFFF;
+  --fuente-titulos: "Montserrat", "Arial Black", sans-serif;
+  --fuente-texto: "Open Sans", Arial, sans-serif;
+  --espacio-s: 0.5rem;
+  --espacio-m: 1rem;
+  --espacio-l: 2rem;
+  --espacio-xl: 3rem;
+}
+
+/* 2. BASE */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--azul-noche);
+  background-color: var(--crema);
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: var(--fuente-titulos); font-weight: 700; line-height: 1.2; }
+img { max-width: 100%; height: auto; }
+main { max-width: 60rem; margin: 0 auto; padding: var(--espacio-m); }
+main a { color: var(--verde-ruta); font-weight: 600; }
+main a:hover, main a:focus { color: var(--azul-noche); }
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+/* 3. ENCABEZADO Y NAVEGACIÓN */
+header {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  padding: var(--espacio-m) var(--espacio-l);
+  background-color: var(--blanco);
+  border-bottom: 4px solid var(--verde-ruta);
+}
+.marca { margin: 0; font-family: var(--fuente-titulos); font-size: 1.25rem; color: var(--azul-noche); }
+.marca img { vertical-align: middle; }
+#menu { display: flex; gap: var(--espacio-m); list-style: none; margin: 0; padding: 0; }
+#menu a { color: var(--gris-asfalto); text-decoration: none; padding: var(--espacio-s); border-bottom: 3px solid transparent; }
+#menu a.activo { color: var(--verde-ruta); font-weight: 600; border-bottom-color: var(--verde-ruta); }
+#menu a:hover, #menu a:focus { color: var(--azul-noche); border-bottom-color: var(--azul-noche); }
+
+/* 4. COMPONENTES  */
+.portada {
+  min-height: 60vh; padding: var(--espacio-l);
+  background-color: var(--azul-noche); color: var(--blanco);
+  border-radius: 0.5rem;
+}
+.portada h1 { color: var(--blanco); font-size: 2.5rem; margin-top: 0; }
+.portada a { color: var(--blanco); }
+.portada a:hover, .portada a:focus { color: var(--naranja-pedal); }
+.portada a:focus { outline-color: var(--blanco); }
+
+.tarjeta {
+  position: relative;
+  padding: var(--espacio-m); margin-bottom: var(--espacio-m);
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-asfalto); border-radius: 0.75rem;
+}
+.tarjeta img { display: block; width: 100%; border-radius: 0.5rem; }
+.etiqueta {
+  position: absolute; top: var(--espacio-s); right: var(--espacio-s);
+  padding: 0.25rem var(--espacio-s);
+  background-color: var(--naranja-pedal); color: var(--azul-noche);
+  font-weight: 600; border-radius: 0.25rem;
+}
+main .boton, button {
+  display: inline-block;
+  padding: var(--espacio-m) var(--espacio-l);
+  background-color: var(--verde-ruta); color: var(--blanco);
+  border: 0; border-radius: 0.5rem;
+  font: 600 1rem var(--fuente-texto); text-decoration: none; cursor: pointer;
+}
+main .boton:hover, main .boton:focus, button:hover, button:focus { background-color: var(--azul-noche); color: var(--blanco); }
+
+table { width: 100%; border-collapse: collapse; background-color: var(--blanco); margin-bottom: var(--espacio-m); }
+caption { text-align: left; font-weight: 600; padding: var(--espacio-s) 0; }
+th, td { padding: var(--espacio-s) var(--espacio-m); border: 1px solid var(--gris-asfalto); text-align: left; }
+thead th { background-color: var(--azul-noche); color: var(--blanco); }
+tbody th { background-color: var(--crema); }
+.tabla-scroll { overflow-x: auto; }
+
+aside { padding: var(--espacio-m); background-color: var(--blanco); border-left: 4px solid var(--naranja-pedal); }
+dt { font-weight: 600; }
+dd { margin: 0 0 var(--espacio-s); color: var(--gris-asfalto); }
+
+/*  5. FORMULARIO  */
+fieldset { margin: 0 0 var(--espacio-l); padding: var(--espacio-m); border: 1px solid var(--gris-asfalto); border-radius: 0.5rem; background-color: var(--blanco); }
+legend { font-family: var(--fuente-titulos); padding: 0 var(--espacio-s); }
+form label { display: block; font-weight: 600; margin-bottom: var(--espacio-s); }
+form input[type="text"], form input[type="email"], form input[type="tel"], form input[type="date"],
+form input[type="number"], form select, form textarea {
+  width: 100%; padding: var(--espacio-s);
+  border: 1px solid var(--gris-asfalto); border-radius: 0.25rem;
+  font: inherit; color: var(--azul-noche);
+}
+.opciones { border: 0; padding: 0; }
+.opciones label { display: inline-block; margin-right: var(--espacio-m); }
+
+/*  6. PIE Y WHATSAPP  */
+footer { padding: var(--espacio-l) var(--espacio-l) 5rem; background-color: var(--azul-noche); color: var(--blanco); text-align: center; }
+footer p { margin: var(--espacio-s) 0; }
+footer a { color: var(--blanco); }
+.whatsapp {
+  position: fixed; right: var(--espacio-m); bottom: var(--espacio-m);
+  padding: var(--espacio-s) var(--espacio-m);
+  background-color: var(--verde-ruta); color: var(--blanco);
+  font-weight: 600; text-decoration: none; border-radius: 2rem;
+  border: 2px solid var(--blanco);
+}
+.whatsapp:hover, .whatsapp:focus { background-color: var(--azul-noche); }
